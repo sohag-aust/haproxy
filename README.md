@@ -1,6 +1,5 @@
-1) Run spring boot app in 4 different port in docker : sudo docker run -p 3333:8080 -d -e APPID=3333 <docker_image_name>
-2) Monitoring logs inside container : sudo docker logs -f <container_id>
-3) Write haproxy configuration inside: cd /etc -> cd /haproxy -> sudo vi haproxy.cfg
-4) Write frontend and backend section below default section
-5) For writing using vi, firstly press i for insert mode, then after writing config press esc and :wq and enter for save and exit
-6) After writing everytime in haproxy config, we should restart haproxy: sudo systemctl stop haproxy, then sudo systemctl start haproxy
+1) install nginx : sudo apt-get install nginx
+2) goto cd /etc/nginx
+3) nginx.conf is the main file where http context includes our servers.
+4) write server configurations inside /sites-available folder. like static-server.config, this server config will included automatically inside http context in nginx.conf file
+5) copy static-server.config file inside /sites-enabled folder, coz all the files inside /sites-enabled will attached in nginx as it is included inside nginx.conf file
